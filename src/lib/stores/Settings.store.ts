@@ -11,6 +11,8 @@ const defaultValue = {
     sidebarWidthMin: 300,
 };
 
+
+
 // Set initial value from localStorage if available
 // Fall back to default value if not available
 let initialValue = defaultValue
@@ -33,7 +35,15 @@ store.subscribe((value) => {
     console.log(`${localStorageKey} updated:`, value);
     if (browser) {
         localStorage.setItem(localStorageKey, JSON.stringify(value));
+        // if theme is dark, set html background to black
+        if (value.theme === "dark") {
+            document.documentElement.style.backgroundColor = "black";
+        } else {
+            document.documentElement.style.backgroundColor = "white";
+        }
+        
     }
 })
+
 
 export default store;
