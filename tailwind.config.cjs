@@ -63,6 +63,7 @@ const config = {
         foreground:             "black",
         "foreground-2": "hsla(0, 0%, 0%, 0.6)",
         "foreground-3":  "hsla(0, 0%, 0%, 0.4)",
+        "foreground-4":  "hsla(0, 0%, 0%, 0.25)",
 
         "border":               "hsla(0, 0%, 0%, 0.1)",
       },
@@ -83,6 +84,7 @@ const config = {
         foreground:             "white",
         "foreground-2": "hsla(0, 0%, 100%, 0.6)",
         "foreground-3": "hsla(0, 0%, 100%, 0.4)",
+        "foreground-4": "hsla(0, 0%, 100%, 0.25)",
 
         "border":               "hsla(0, 0%, 100%, 0.14)",
       },

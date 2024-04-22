@@ -8,6 +8,7 @@
     import InputRow from "$lib/components/InputRow.svelte";
     import RangeRow from "$lib/components/RangeRow.svelte";
     import NavigationRow from "$lib/components/NavigationRow.svelte";
+    import CheckboxRow from "$lib/components/CheckboxRow.svelte";
     import RowGroup from "$lib/components/RowGroup.svelte";
 
     import IconsGridOverview from "./icons-grid-overview.svelte";
@@ -36,7 +37,7 @@
     </svelte:fragment>
     
     <div class="flex flex-col gap-3">
-    
+
         <h2 class="text-2xl font-semibold mt-4">Buttons</h2>
         <div class="flex flex-col gap-2">
             <!-- ROW -->
@@ -108,12 +109,19 @@
             <NavigationRow action={()=> goto('sub-page')} label="Navigation Row" trailingLabel="Trailing Label"/>
         </RowGroup>
 
+        <RowGroup container={true}>
+            <CheckboxRow label="Checkbox Row" value={true}/>
+            <CheckboxRow label="Checkbox Row" />
+        </RowGroup>
+
         <RowGroup title="Container = falses">
             <ToggleRow label="Toggle Row" />
             <InputRow label="Input Row" value="Example text" />
             <RangeRow label="Volume" progress={true} trailingLabel={exampleValueVolume.toString()+'%'} bind:value={exampleValueVolume} min={0} max={100} step={1}/>
             <NavigationRow action={()=> goto('sub-page')} label="Navigation Row" />
         </RowGroup>
+
+        
         
 
         <h2 class="text-2xl font-semibold mt-4">Toasts</h2>
