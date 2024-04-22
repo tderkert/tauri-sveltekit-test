@@ -25,7 +25,7 @@
 
 <RowWrapper {label} {subtitle} {trailingLabel} {id}>
     {#if type === "number"}
-        <input class="p-2 bg-transparent rounded-md text-right transition hover:bg-background-selection active:bg-background-selection" type="number" {id} {step} {min} {max} disabled={disabled} bind:value={value}>
+        <input class="p-2 bg-transparent rounded-md text-right transition hover:bg-background-selection active:bg-background-selection tabular-nums" type="number" {id} {step} {min} {max} disabled={disabled} bind:value={value}>
     {:else}
         <input class="p-2 bg-transparent rounded-md text-right transition hover:bg-background-selection active:bg-background-selection" type="text" {id} bind:value={value}>
     {/if}
