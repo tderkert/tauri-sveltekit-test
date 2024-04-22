@@ -6,16 +6,18 @@
     import Settings from "$lib/stores/Settings.store";
     import RowGroup from "$lib/components/RowGroup.svelte";
     import RangeRow from "$lib/components/RangeRow.svelte";
+    import { onMount } from "svelte";
+    import { get } from "svelte/store";
 
-    $: themeBool = $Settings.theme === "dark";
+    // Local theme variable
+    let themeBool = $Settings.theme === "dark";
+    // Update Settings when themeBool changes
+    $: themeBool ? $Settings.theme = "dark" : $Settings.theme = "light";
     // Make title case
     $: themeLabel = $Settings.theme.charAt(0).toUpperCase() + $Settings.theme.slice(1);
 
-    // Function to toggle the theme
-    function toggleTheme() {
-        console.log("toggleTheme")
-        $Settings.theme = themeBool ? "light" : "dark";
-    }
+
+
     let exampleValueScale = 120;
     let exampleValueVolume = 50;
     let exampleValueSize = 50;
@@ -30,7 +32,7 @@
     </svelte:fragment>
     <RowGroup container={true}>
         <InputRow label="Sidebar Width" type="number" min={$Settings.sidebarWidthMin} step={40} max={$Settings.sidebarWidthMax} bind:value={$Settings.sidebarWidth}/>
-        <ToggleRow value={themeBool} on:click={toggleTheme} label="Mode" trailingLabel={themeLabel}/>
+        <ToggleRow bind:value={themeBool} label="Mode" trailingLabel={themeLabel}/>
         <ToggleRow value={true} label="Test"/>
     </RowGroup>
     
