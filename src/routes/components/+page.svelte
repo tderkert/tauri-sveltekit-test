@@ -14,6 +14,8 @@
     import IconsGridOverview from "./icons-grid-overview.svelte";
     import ColorSwatch from "./colorSwatch.svelte";
     import { goto } from "$app/navigation";
+    import ToggleControl from "$lib/components/ToggleControl.svelte";
+    import CheckboxControl from "$lib/components/CheckboxControl.svelte";
 
     $: invertedTheme = $Settings.theme === "dark" ? "light" : "dark";
 
@@ -84,7 +86,15 @@
                 <ContextMenu variant="ghost" actions={exampleActions} direction="NW"/>
             </div>
         </div>
-        
+
+        <h2 class="text-2xl font-semibold mt-4">Controls</h2>
+        <!-- ROW -->
+        <div class="flex gap-2 items-center">
+            <ToggleControl value={true} /> 
+            <ToggleControl value={false} />
+            <CheckboxControl value={true} />
+            <CheckboxControl value={false} />
+        </div>
 
         <h2 class="text-2xl font-semibold mt-4">Rows</h2>
         <!-- COL -->
