@@ -14,7 +14,7 @@
 
 
 <div class="flex {horizontalGap} w-full items-center group relative" >
-    <label class="flex text-foreground items-center gap leading-tight select-none flex-grow flex-shrink-0 {paddingY} {minHeight} w-auto" for="{id}">
+    <label class="flex text-foreground items-center gap leading-tight select-none flex-grow flex-shrink-0 tabular-nums {paddingY} {minHeight} w-auto" for="{id}">
         <!-- Stacked Labels -->
         <div class="flex flex-col flex-grow flex-shrink-0">
             <span class="font-medium">{label}</span>
