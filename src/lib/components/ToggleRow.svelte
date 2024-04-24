@@ -13,7 +13,7 @@
 
 <RowWrapper {label} {subtitle} {trailingLabel} {id}>
     <div class="flex items-center">
-        <ToggleControl {id} bind:value={value}></ToggleControl>
+        <ToggleControl on:change {id} bind:value={value}></ToggleControl>
     </div>
 </RowWrapper>
 
