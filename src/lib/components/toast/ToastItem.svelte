@@ -24,6 +24,6 @@
 <div in:scale={{start:0.9,/*y:20,*/ duration: settings.animationDuration, delay:100}} 
     out:scale={{start:0.9,/*y:-20,*/ duration: settings.animationDuration}} 
     bind:this={element} 
-    class="py-2 px-4 transition-opacity duration-700 bg-background-2 rounded-xl shadow-overlay">
+    class="py-2 px-4 transition-opacity duration-700 bg-foreground text-background rounded-xl shadow-overlay">
         {toast.message}
 </div>
