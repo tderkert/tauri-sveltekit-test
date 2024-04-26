@@ -6,16 +6,18 @@
     import toast from "$lib/components/toast/toast";
     import ToggleRow from "$lib/components/ToggleRow.svelte";
     import InputRow from "$lib/components/InputRow.svelte";
+    import InputNumberRow from "$lib/components/InputNumberRow.svelte";
     import RangeRow from "$lib/components/RangeRow.svelte";
     import NavigationRow from "$lib/components/NavigationRow.svelte";
     import CheckboxRow from "$lib/components/CheckboxRow.svelte";
     import RowGroup from "$lib/components/RowGroup.svelte";
 
-    import IconsGridOverview from "./icons-grid-overview.svelte";
     import ColorSwatch from "./colorSwatch.svelte";
     import { goto } from "$app/navigation";
     import ToggleControl from "$lib/components/ToggleControl.svelte";
     import CheckboxControl from "$lib/components/CheckboxControl.svelte";
+    import InputText from "$lib/components/InputText.svelte";
+    import InputNumber from "$lib/components/InputNumber.svelte";
 
     $: invertedTheme = $Settings.theme === "dark" ? "light" : "dark";
 
@@ -31,7 +33,7 @@
 
 <PageContainer>
     <svelte:fragment slot="title">
-        Components
+        Icons
     </svelte:fragment>
     <svelte:fragment slot="actions">
         <Button icon="settings">Settings</Button>
@@ -87,6 +89,18 @@
             </div>
         </div>
 
+        <h2 class="text-2xl font-semibold mt-4">Inputs</h2>
+        <div class="flex flex-row gap-2">
+            <InputText label="Input Text" value="Example text" />
+            <InputNumber label="Input Number" min={0} max={100} step={10} value={2} />
+            
+        </div>
+        <div class="flex flex-row gap-2">
+            <InputText value="" icon="search" />   
+            <InputText value="" icon="calendar" />    
+        </div>
+        
+
         <h2 class="text-2xl font-semibold mt-4">Controls</h2>
         <!-- ROW -->
         <div class="flex gap-2 items-center">
@@ -105,8 +119,10 @@
         </RowGroup>
         <RowGroup container={true}>
             <InputRow label="Input Row" value="Example text" />
-            <InputRow label="Input Row" trailingLabel="Trailing Label" value="Example text" />
-            <InputRow label="Input Row" subtitle="Subtitle" type="number" step={40} max="200" value="20" />
+            <InputRow label="Input Row" subtitle="Subtitle" value="Example text" />
+            <InputNumberRow label="Input Row" subtitle="Subtitle" value={20} />
+            <InputNumberRow label="Input Row (Step 40) (0-80)" subtitle="Subtitle" step={40} min={0} max={80} value={20} />
+
         </RowGroup>
         <RowGroup container={true}>
             <RangeRow label="Volume" progress={true} trailingLabel={exampleValueVolume.toString()+'%'} bind:value={exampleValueVolume} min={0} max={100} step={1}/>
@@ -183,8 +199,5 @@
             </div>
         </div>
     
-        <h2 class="text-2xl font-semibold mt-4">Feather Icons</h2>
-        <IconsGridOverview/>
-
     </div>
 </PageContainer>

@@ -30,6 +30,11 @@
             icon: "PACKAGE",
             route: "/components/",
         },
+        {
+            name: "Icons",
+            icon: "INFO",
+            route: "/icons/",
+        },
     ];
 
     function toggleTheme() {
