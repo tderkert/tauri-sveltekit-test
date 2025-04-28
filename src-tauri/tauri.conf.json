@@ -69,7 +69,7 @@
         "width": 800,
         "titleBarStyle": "Overlay",
         "hiddenTitle": true,
-        "theme": "Light"
+        "theme": "Dark"
         
       }
     ]
